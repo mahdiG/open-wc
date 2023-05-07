@@ -1,6 +1,6 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html, css } from "lit";
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+const logo = new URL("../assets/open-wc-logo.svg", import.meta.url).href;
 
 export class WcTest extends LitElement {
   static get properties() {
@@ -56,7 +56,7 @@ export class WcTest extends LitElement {
 
   constructor() {
     super();
-    this.title = 'My app';
+    this.title = "My app";
   }
 
   render() {
@@ -64,6 +64,9 @@ export class WcTest extends LitElement {
       <main>
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.title}</h1>
+
+        <h1>api env process.env.API_BASE_URL</h1>
+        <h1>ws env process.env.WS_BASE_URL</h1>
 
         <p>Edit <code>src/WcTest.js</code> and save to reload.</p>
         <a

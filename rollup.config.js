@@ -3,6 +3,7 @@ import babel from "@rollup/plugin-babel";
 import html from "@web/rollup-plugin-html";
 import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 import { terser } from "rollup-plugin-terser";
+import replace from "@rollup/plugin-replace";
 import { generateSW } from "rollup-plugin-workbox";
 import path from "path";
 
@@ -23,6 +24,12 @@ export default {
       minify: true,
       injectServiceWorker: false,
       serviceWorkerPath: "dist/sw.js",
+    }),
+    replace({
+      "process.env.API_BASE_URL": process.env.API_BASE_URL,
+      "process.env.WS_BASE_URL": process.env.WS_BASE_URL,
+      // __buildDate__: () => JSON.stringify(new Date()),
+      // __buildVersion: 15
     }),
     /** Resolve bare module imports */
     nodeResolve(),
