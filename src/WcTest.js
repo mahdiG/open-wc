@@ -65,6 +65,8 @@ export class WcTest extends LitElement {
         <div class="logo"><img alt="open-wc logo" src=${logo} /></div>
         <h1>${this.title}</h1>
 
+        <p>Let's see if it uses cache</p>
+
         <h1>api env process.env.API_BASE_URL</h1>
         <h1>ws env process.env.WS_BASE_URL</h1>
 
